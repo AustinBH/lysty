@@ -1,5 +1,7 @@
 # README
 
+The Lysty app allows users to save lists of whatever products they wish to purchase.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
