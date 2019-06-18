@@ -7,8 +7,16 @@
 
 <ol>
   <% @products.each do |product| %>
-    <li> <%= link_to product.name, product %> <%= link_to 'X', product, method: :delete %></li>
+    <li> <%= link_to product.name, product %></li>
   <% end %>
 </ol>
+
+  <%= form_for :lists, url: '/delete_product' do |f| %>
+    <%= f.label 'Remove a product from my list' %>
+    <div><%= f.collection_select :product, @products, :id, :name %>
+    <%= f.submit 'Delete' %>
+  <% end %>
+
+<br><br>
 
 <%= link_to 'Delete this list', delete_list_path, method: :delete, data: {confirm: "Are you sure?"} %>
