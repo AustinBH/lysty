@@ -5,10 +5,12 @@
 <h3>My Lists</h3>
 
   <% @lists.each do |list|%>
-    <%= list.title %>
-    <ol><% list.products.each do |product| %>
+    <%= link_to list.title, list %>
+    <ol>
+    <% list.products.each do |product| %>
         <li><%= link_to product.name, product %></li>
-    </ol><% end %>
+    <% end %>
+    </ol>
   <% end %>
 
 <%= @no_lists %>

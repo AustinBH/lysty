@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<br> <%= link_to 'Delete My Account', @user, method: :delete, data: {confirm: "Are you sure?"} %>
+<br> <%= link_to 'Delete My Account', delete_account_path, method: :delete, data: {confirm: "Are you sure?"} %>

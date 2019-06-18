@@ -33,13 +33,13 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
 
   def destroy
     @user.delete
+    @user.lists.destroy_all
     session.delete :user_id
     redirect_to '/'
-  end
-
   end
 
 
@@ -50,7 +50,7 @@ private
   end
 
   def set_params
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
 end
