@@ -14,7 +14,7 @@ class User < ApplicationRecord
     self.errors.count
   end
 
-  def full_messages
+  def error_messages
     self.errors.full_messages
   end
 end
