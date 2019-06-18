@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :validate_user, only: [:new, :create]
 
   def create
     @user = User.find_by(name: params[:session][:name])
