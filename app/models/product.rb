@@ -5,5 +5,9 @@ class Product < ApplicationRecord
 
   has_many :productstores
   has_many :stores, through: :productstores
-  
+
+  validates :name, uniqueness: true, presence: true
+  validates :origin, presence: true
+  validates :price, presence: true
+
 end
