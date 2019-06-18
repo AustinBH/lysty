@@ -20,6 +20,22 @@ class ListsController < ApplicationController
     end
   end
 
+  def new
+    @list = List.new
+    render :new
+  end
+
+  def create
+    @user = User.find(session[:user_id])
+    @list = List.new(list_params)
+    @list.user = @user
+    if @list.save
+      redirect_to '/'
+    else
+      render :new
+    end
+  end
+
   def destroy
     @list = List.find(session[:list_id])
     @list.delete
