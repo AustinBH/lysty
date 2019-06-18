@@ -11,7 +11,9 @@
 5.times do
 User.create(
   name: Faker::Games::SuperSmashBros.fighter,
-  email: Faker::Internet.email
+  email: Faker::Internet.email,
+  password: "123",
+  password_confirmation: "123"
 )
 end
 
@@ -28,6 +30,13 @@ Product.create(
   price: Faker::Commerce.price,
   origin: Faker::Address.country
 )
+end
+
+25.times do
+  ListProduct.create(
+    list: List.all.sample,
+    product: Product.all.sample
+  )
 end
 
 10.times do

@@ -1,0 +1,37 @@
+<br><br>
+
+<% if @counter == 1 %>
+  <div class="alert alert-danger">
+    <strong>Error!</strong> Invalid username/password combination!
+  </div>
+<% elsif @counter == 2 %>
+  <div class="alert alert-danger">
+    <strong>Error!</strong> Passwords do not match!
+  </div>
+<% end %>
+
+<h1>Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+      <div>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h2>Edit your list:</h2>
+
+<%= form_for(@list) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+<% end %>
+
+<ol>
+  <% @products.each do |product| %>
+    <li> <%= link_to product.name, product %> <%= link_to 'X', product, method: :delete %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Delete this list', @list, method: :destroy, data: {confirm: "Are you sure?"} %>
