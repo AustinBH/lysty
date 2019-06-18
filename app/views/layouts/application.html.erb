@@ -9,20 +9,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <% if !@home_page %>
-  <%= link_to 'Home', root_path %>
+    <%= button_to 'Home', root_path, method: :get %>
   <% end %>
 
   <% if logged_in? %>
-    <%= link_to 'My Account', '/my_account' %>
-    <%= link_to 'Logout', logout_path %>
+    <%= button_to 'My Account', '/my_account', method: :get %>
+    <%= button_to 'Logout', logout_path, method: :get %>
   <% end %>
 
   <body>
     <%= yield %>
 
   <% if logged_in? %>
-    <%= link_to 'Products', products_path %>
-    <%= link_to 'Stores', stores_path %>
+    <%= button_to 'Products', products_path, method: :get %>
+    <%= button_to 'Stores', stores_path, method: :get %>
   <% end %>
   </body>
 </html>
