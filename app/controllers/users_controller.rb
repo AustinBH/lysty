@@ -1,16 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_params, only: [:show, :edit, :update, :destroy]
-
-  # def show
-  #   set_params
-  #   render :show
-  # end
-
-  # def edit
-  #   set_params
-  #   render :edit
-  # end
+  before_action :set_params, only: [:edit, :update, :destroy]
 
   def update
     if @user.update(user_params)
@@ -29,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to '/'
     else
       render :new
     end
