@@ -30,6 +30,13 @@ Product.create(
 )
 end
 
+25.times do
+  ListProduct.create(
+    list: List.all.sample,
+    product: Product.all.sample
+  )
+end
+
 10.times do
 Store.create(
   name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
