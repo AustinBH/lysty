@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to '/'
     else
       render :edit
     end
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render :new
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.delete
+    session.delete :user_id
     redirect_to '/'
   end
 

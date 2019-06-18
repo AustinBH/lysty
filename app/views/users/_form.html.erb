@@ -1,10 +1,16 @@
 <ul style= "list-style: none">
-  <%= form_for(@user) do |f| %>
+  <%= form_for :user, url: '/signup' do |f| %>
     <li> <%= f.label :name %> </li>
     <li> <%= f.text_field :name %> </li>
 
     <li> <%= f.label :email %> </li>
     <li> <%= f.email_field :email %> </li>
+
+    <li> <%= f.label :password %> </li>
+    <li> <%= f.password_field :password %> </li>
+
+    <li> <%= f.label :password_confirmation %> </li>
+    <li> <%= f.password_field :password_onfirmation %> </li>
 
     <li> <%= f.submit %> </li>
   <% end %>

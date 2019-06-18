@@ -11,7 +11,9 @@
 5.times do
 User.create(
   name: Faker::Games::SuperSmashBros.fighter,
-  email: Faker::Internet.email
+  email: Faker::Internet.email,
+  password: "123",
+  password_confirmation: "123"
 )
 end
 
