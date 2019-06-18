@@ -8,4 +8,8 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
   end
 
+  def filter
+    byebug
+  end
+
 end
