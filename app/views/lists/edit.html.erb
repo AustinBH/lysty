@@ -11,4 +11,4 @@
   <% end %>
 </ol>
 
-<%= link_to 'Delete this list', @list, method: :destroy, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Delete this list', delete_list_path, method: :delete, data: {confirm: "Are you sure?"} %>
