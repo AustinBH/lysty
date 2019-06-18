@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lysty</title>
+    <title>Products</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,9 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%= link_to 'Home', root_path %>
+
 
   <body>
     <%= yield %>
   </body>
+    <%= link_to 'Stores', stores_path %>
 </html>
