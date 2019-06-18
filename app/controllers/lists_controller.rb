@@ -4,7 +4,7 @@ class ListsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @lists = List.all.select {|list| list.user == @user}
+    user_lists
     render :index
   end
 
@@ -18,6 +18,21 @@ class ListsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def add_product
+    @product = Product.find(session[:product_id])
+    @list = List.find(params[:lists][:list_id])
+    ListProduct.create(list: @list, product: @product)
+    redirect_to @product
+  end
+
+  def remove_product
+    @list = List.find(session[:list_id])
+    @product = Product.find(params[:lists][:product])
+    @list_product = ListProduct.find_by(list: @list, product: @product)
+    @list_product.delete
+    redirect_to edit_list_path(@list)
   end
 
   def destroy
