@@ -1,0 +1,11 @@
+<ul style= "list-style: none">
+  <%= form_for(@user) do |f| %>
+    <li> <%= f.label :name %> </li>
+    <li> <%= f.text_field :name %> </li>
+
+    <li> <%= f.label :email %> </li>
+    <li> <%= f.email_field :email %> </li>
+
+    <li> <%= f.submit %> </li>
+  <% end %>
+</ul>
