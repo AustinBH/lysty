@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  skip_before_action :validate_user, only: [:new, :create]
   before_action :set_params, only: [:edit, :update, :destroy]
 
   def update
