@@ -3,6 +3,7 @@
 <ol>
   <% @products.each do |product| %>
     <li> <%= link_to product.name, product %> </li>
+    <%= product.out_of_stock %>
   <% end %>
 </ol>
 
