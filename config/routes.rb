@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/my_account', to: 'users#edit'
   patch '/my_account', to: 'users#update'
   delete '/delete_account', to: 'users#destroy', as: 'delete_account'
-  post '/delete_product', to: 'lists#remove_product'
+  post '/delete_product', to: 'lists#remove_product', as: 'delete_product'
   post '/add_product', to: 'lists#add_product'
   get '/filter_stores', to: 'stores#filter'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
