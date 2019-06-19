@@ -50,7 +50,7 @@ class ListsController < ApplicationController
 
   def remove_product
     @list = List.find(session[:list_id])
-    @product = Product.find(params[:lists][:product])
+    @product = Product.find(params[:id])
     @list_product = ListProduct.find_by(list: @list, product: @product)
     @list_product.delete
     redirect_to edit_list_path(@list)

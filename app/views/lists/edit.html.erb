@@ -4,15 +4,9 @@
 
 <ol>
   <% @products.each do |product| %>
-    <li> <%= link_to product.name, product %></li>
+    <li> <%= link_to product.name, product %> <%= button_to 'Delete', delete_product_path(:id => product.id) %></li>
   <% end %>
 </ol>
-
-  <%= form_for :lists, url: '/delete_product' do |f| %>
-    <%= f.label 'Remove a product from my list' %>
-    <div><%= f.collection_select :product, @products, :id, :name %>
-    <%= f.submit 'Delete' %>
-  <% end %>
 
 <br><br>
 
