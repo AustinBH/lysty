@@ -2,10 +2,14 @@ class ListsController < ApplicationController
 
   before_action :validate_list, only: [:show, :edit, :update]
 
-  def index
-    @user = User.find(session[:user_id])
-    user_lists
-    render :index
+  # def index
+  #   @user = User.find(session[:user_id])
+  #   user_lists
+  #   render :index
+  # end
+
+  def show
+    session[:list_id] = @list.id #filter_stores is buggy without this, when creating new lists
   end
 
   def edit
@@ -36,7 +40,7 @@ class ListsController < ApplicationController
       render :new
     end
   end
-  
+
   def add_product
     @product = Product.find(session[:product_id])
     @list = List.find(params[:lists][:list_id])
@@ -55,7 +59,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(session[:list_id])
     @list.delete
-    redirect_to '/' #Not redirecting to root, redirects to @list ??????
+    redirect_to '/'
   end
 
   private

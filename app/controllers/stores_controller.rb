@@ -12,6 +12,7 @@ class StoresController < ApplicationController
     @stores = []
     stores = Store.all
     @list = List.find(session[:list_id])
+
     @products = @list.products
     @products.each do |product|
       stores.each do |store|
