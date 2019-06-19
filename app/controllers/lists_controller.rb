@@ -1,24 +1,26 @@
 class ListsController < ApplicationController
 
   before_action :validate_list, only: [:show, :edit, :update]
+  before_action :list_redirect, only: [:show, :edit]
 
   def index
+    byebug
     @user = User.find(session[:user_id])
     @lists = @user.lists
+    if @lists == []
+      @no_lists = "You don't have any lists."
+    end
+
     render :index
   end
 
-  def show
-    if @list == ""
-      redirect_to '/lists'
-    else
-      session[:list_id] = @list.id#filter_stores is buggy without this, when creating new lists
-    end
-  end
-
-  def edit
-    session[:list_id] = @list.id
-  end
+  # def show
+  #   list_redirect
+  # end
+  #
+  # def edit
+  #   list_redirect
+  # end
 
   def update
     if @list.update(list_params)
@@ -39,7 +41,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = @user
     if @list.save
-      redirect_to '/'
+      redirect_to lists_path
     else
       render :new
     end
@@ -82,4 +84,13 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:title)
   end
+
+  def list_redirect
+    if @list == ""
+      redirect_to '/lists'
+    else
+      session[:list_id] = @list.id
+    end
+  end
+
 end
