@@ -9,7 +9,11 @@ class ListsController < ApplicationController
   end
 
   def show
-    session[:list_id] = @list.id #filter_stores is buggy without this, when creating new lists
+    if @list == ""
+      redirect_to '/lists'
+    else
+      session[:list_id] = @list.id#filter_stores is buggy without this, when creating new lists
+    end
   end
 
   def edit
