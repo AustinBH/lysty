@@ -1,9 +1,5 @@
 <h2>Edit your list:</h2>
 
-<%= form_for(@list) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-<% end %>
 
 <ol>
   <% @products.each do |product| %>
