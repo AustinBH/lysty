@@ -4,4 +4,7 @@
     <li><%= link_to list.title, list %></li>
   <% end %>
 </ul>
+
+  <%= @no_lists %>
+
   <%= button_to 'New List', '/lists/new', method: :get %>
