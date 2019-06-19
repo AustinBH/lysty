@@ -1,12 +1,8 @@
 <br><br>
 
-<% if @counter == 1 %>
+<% if @counter %>
   <div class="alert alert-danger">
     <strong>Error!</strong> Invalid username/password combination!
-  </div>
-<% elsif @counter == 2 %>
-  <div class="alert alert-danger">
-    <strong>Error!</strong> Passwords do not match!
   </div>
 <% end %>
 
@@ -24,10 +20,7 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
       </div>
-      <div>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
+
       <div>
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>

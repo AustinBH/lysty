@@ -1,5 +1,24 @@
 <h2>Edit My Account</h2>
 
-<%= render 'form' %>
+<%= render 'errors' %>
+
+<ul style= "list-style: none">
+  <%= form_for :user, url: '/my_account', method: :patch do |f| %>
+    <li> <%= f.label :name %> </li>
+    <li> <%= f.text_field :name %> </li>
+
+    <li> <%= f.label :email %> </li>
+    <li> <%= f.email_field :email %> </li>
+
+    <li> <%= f.label :password %> </li>
+    <li> <%= f.password_field :password %> </li>
+
+    <li> <%= f.label :password_confirmation %> </li>
+    <li> <%= f.password_field :password_confirmation %> </li>
+
+    <li> <%= f.submit %> </li>
+  <% end %>
+</ul>
+
 
 <br> <%= link_to 'Delete My Account', delete_account_path, method: :delete, data: {confirm: "Are you sure?"} %>
