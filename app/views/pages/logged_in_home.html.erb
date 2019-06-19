@@ -1,0 +1,17 @@
+
+<%= render 'welcome' %>
+
+<span class="welcome-user"><%= "Welcome back, #{@user.name}" %></span>
+
+<div class="logged-in">
+  <div class="">
+    <%= button_to "My Lists", lists_path, method: :get, class: "btn btn-outline-success" %>
+  </div>
+  <div class="">
+    <%= button_to "My Stores", my_stores_path, method: :get, class: "btn btn-outline-success" %>
+  </div>
+
+  <div class="">
+    <%= button_to "My Products", my_products_path, method: :get, class: "btn btn-outline-success" %>
+  </div>
+</div>

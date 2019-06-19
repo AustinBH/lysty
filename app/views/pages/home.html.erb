@@ -1,4 +1,8 @@
-<%= render 'welcome' %>
 
-<%= button_to 'Signup', '/signup', method: :get %>
-<%= button_to 'Login', '/login', method: :get %>
+<div class="welcome">
+  <%= render 'welcome' %>
+  <div class="">
+    <%= button_to 'Signup', '/signup', method: :get, class: "btn btn-success" %>
+    <%= button_to 'Login', '/login', method: :get, class: "btn btn-success" %>
+  </div>
+</div>
