@@ -17,4 +17,37 @@ class User < ApplicationRecord
   def error_messages
     self.errors.full_messages
   end
+
+  def lists_count
+    self.lists.count
+  end
+
+  #this method will return an array of products for a user.
+  def products
+    products = []
+    self.lists.each do |list|
+      list.products.each do |product|
+        if !products.include?(product)
+          products << product
+        end
+      end
+    end
+    products
+  end
+
+  #this method will return an array of all stores that a user's products are sold in
+  def stores
+    stores = []
+    self.lists.each do |list|
+      list.products.each do |product|
+        product.stores.each do |store|
+          if !stores.include?(store)
+            stores << store
+          end
+        end
+      end
+    end
+    stores
+  end
+
 end

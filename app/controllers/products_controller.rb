@@ -10,15 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def my_products
-    @products = []
     @user = User.find(session[:user_id])
-    @user.lists.each do |list|
-      list.products.each do |product|
-        if !@products.include?(product)
-          @products << product
-        end
-      end
-    end
+    @products = @user.products
     render :index
   end
 
