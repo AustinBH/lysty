@@ -9,4 +9,17 @@ class ProductsController < ApplicationController
     session[:product_id] = @product.id
   end
 
+  def filter
+    @products = []
+    @user = User.find(session[:user_id])
+    @user.lists.each do |list|
+      list.products.each do |product|
+        if !@products.include?(product)
+          @products << product
+        end
+      end
+    end
+    render :index
+  end
+
 end

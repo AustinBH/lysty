@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/delete_account', to: 'users#destroy', as: 'delete_account'
   post '/delete_product', to: 'lists#remove_product', as: 'delete_product'
   post '/add_product', to: 'lists#add_product'
-  get '/filter_stores', to: 'stores#filter'
+  get '/filter_stores', to: 'stores#filter', as: 'filter_stores'
+  get '/filter_products', to: 'products#filter', as: 'filter_products'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
