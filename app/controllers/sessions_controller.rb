@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(name: params[:session][:name])
     if @user && @user.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id #creates a new session when set?
       redirect_to '/'
     else
-      @counter = 1
+      flash[:message] = "Invalid username/password combination!" #is there a different way to set errors?
       render 'new'
     end
   end

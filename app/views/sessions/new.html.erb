@@ -1,13 +1,6 @@
-<br><br>
-
-<% if @counter %>
-  <div class="alert alert-danger">
-    <strong>Error!</strong> Invalid username/password combination!
-  </div>
-<% end %>
-
 <h1>Log in</h1>
 
+<div> <strong><%= flash[:message] %></strong> </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
