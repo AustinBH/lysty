@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :set_params, only: [:edit, :update, :destroy]
 
   def update
-    byebug
     if @user.update(user_params) && params[:user][:password] == params[:user][:password_confirmation]
       redirect_to '/'
     else
