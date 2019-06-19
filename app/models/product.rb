@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
-  has_many :listproducts
-  has_many :lists, through: :listproducts
+  has_many :list_products
+  has_many :lists, through: :list_products
   has_many :users, through: :lists
 
-  has_many :productstores
-  has_many :stores, through: :productstores
+  has_many :product_stores
+  has_many :stores, through: :product_stores
 
   validates :name, uniqueness: true, presence: true
   validates :origin, presence: true
