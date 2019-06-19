@@ -1,6 +1,7 @@
 <h3><%= @product.name %></h3>
 <p>Price: $<%= @product.price %></p>
 <p>Origin: <%= @product.origin %></p>
+<p><%= @product.out_of_stock %></p>
 
 <%= form_for :lists, url: '/add_product' do |f| %>
   <%= f.label 'Add this product to my list' %>

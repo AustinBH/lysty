@@ -10,4 +10,10 @@ class Product < ApplicationRecord
   validates :origin, presence: true
   validates :price, presence: true
 
+  def out_of_stock
+    if self.stores.empty?
+      "This product is currently out of stock!"
+    end
+  end
+
 end
