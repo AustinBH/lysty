@@ -22,10 +22,6 @@
     <%= yield %>
 
   <% if logged_in? %>
-    <% if @home_page %>
-      <%= button_to 'New List', '/lists/new', method: :get %>
-    <% end %>
-
     <%= button_to 'Products', products_path, method: :get %>
     <%= button_to 'Stores', stores_path, method: :get %>
   <% end %>
