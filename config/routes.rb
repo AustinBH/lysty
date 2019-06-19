@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/delete_product', to: 'lists#remove_product', as: 'delete_product'
   post '/add_product', to: 'lists#add_product'
   get '/filter_stores', to: 'stores#filter', as: 'filter_stores'
-  get '/filter_products', to: 'products#filter', as: 'filter_products'
+  get '/my_stores', to: 'stores#my_stores', as: 'my_stores'
+  get '/my_products', to: 'products#my_products', as: 'my_products'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

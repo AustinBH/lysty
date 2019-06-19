@@ -23,4 +23,19 @@ class StoresController < ApplicationController
     end
   end
 
+  def my_stores
+    @stores = []
+    @user = User.find(session[:user_id])
+    @user.lists.each do |list|
+      list.products.each do |product|
+        product.stores.each do |store|
+          if !@stores.include?(store)
+          @stores << store
+          end
+        end
+      end
+    end
+    render :index
+  end
+
 end

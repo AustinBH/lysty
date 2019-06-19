@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     session[:product_id] = @product.id
   end
 
-  def filter
+  def my_products
     @products = []
     @user = User.find(session[:user_id])
     @user.lists.each do |list|
