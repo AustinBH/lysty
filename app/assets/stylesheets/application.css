@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+   form {
+     display: inline;
+   }
+   .welcome {
+     text-align: center;
+     margin-top: 30px;
+   }
+
+   .logged-in {
+     margin-top: 30px;
+   }
+   div.logged-in div {
+     margin: 10px;
+   }
+
+   .welcome-user {
+     font-size: 20px;
+     font-family: Helvetica, sans-serif;
+   }
