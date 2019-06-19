@@ -9,7 +9,17 @@ class StoresController < ApplicationController
   end
 
   def filter
-    byebug
+    @stores = []
+    stores = Store.all
+    @list = List.find(session[:list_id])
+    @products = @list.products
+    @products.each do |product|
+      stores.each do |store|
+        if store.products.include?(product)
+          @stores << store
+        end
+      end
+    end
   end
 
 end

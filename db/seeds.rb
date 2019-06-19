@@ -24,11 +24,18 @@ List.create(
 )
 end
 
-10.times do
+25.times do
 Product.create(
   name: Faker::Commerce.product_name,
   price: Faker::Commerce.price,
   origin: Faker::Address.country
+)
+end
+
+10.times do
+Store.create(
+  name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
+  location: Faker::Address.full_address
 )
 end
 
@@ -39,9 +46,9 @@ end
   )
 end
 
-10.times do
-Store.create(
-  name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
-  location: Faker::Address.full_address
-)
+25.times do
+  ProductStore.create(
+    product: Product.all.sample,
+    store: Store.all.sample
+  )
 end
