@@ -2,11 +2,11 @@ class ListsController < ApplicationController
 
   before_action :validate_list, only: [:show, :edit, :update]
 
-  # def index
-  #   @user = User.find(session[:user_id])
-  #   user_lists
-  #   render :index
-  # end
+  def index
+    @user = User.find(session[:user_id])
+    @lists = @user.lists
+    render :index
+  end
 
   def show
     session[:list_id] = @list.id #filter_stores is buggy without this, when creating new lists

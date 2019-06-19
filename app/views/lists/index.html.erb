@@ -1,0 +1,7 @@
+<h2>Your Lists:</h2>
+<ul style= "list-style: none">
+  <% @lists.each do |list| %>
+    <li><%= link_to list.title, list %></li>
+  <% end %>
+</ul>
+  <%= button_to 'New List', '/lists/new', method: :get %>
