@@ -50,6 +50,7 @@ class User < ApplicationRecord
     stores
   end
 
+  #condensed all 3 of the below methods from the original 6 methods
   def list_sample(element)
     if self.lists != []
       self.lists[element]
@@ -67,6 +68,5 @@ class User < ApplicationRecord
       self.stores[element]
     end
   end
-
 
 end
