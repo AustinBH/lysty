@@ -6,8 +6,12 @@ class ListsController < ApplicationController
   def index
     @user = User.find(session[:user_id])
     @lists = @user.lists
+    #If user has no list, set @no_lists,
+    #which will be displayed on index view.
     if @lists == []
       @no_lists = "You don't have any lists."
+    #Otherwise, user's lists will be showed and
+    #@no_lists will be an empty string and not show.
     end
 
     render :index
@@ -36,10 +40,13 @@ class ListsController < ApplicationController
   end
 
   def create
+    #finding the current user
     @user = User.find(session[:user_id])
     @list = List.new(list_params)
+    #setting the association of new list to current user
     @list.user = @user
     if @list.save
+      #lists_path = lists index
       redirect_to lists_path
     else
       render :new
@@ -47,6 +54,8 @@ class ListsController < ApplicationController
   end
 
   def add_product
+    #Finding the @product and @list to pass through to create a ListProduct,
+    #which will be displayed on the list. 
     @product = Product.find(session[:product_id])
     @list = List.find(params[:lists][:list_id])
     ListProduct.create(list: @list, product: @product)
@@ -76,6 +85,7 @@ class ListsController < ApplicationController
       @products = @list.products
     else
       @list = ""
+      #setting @products technically isn't needed, user will be redirected before it's every used
       @products = []
     end
   end

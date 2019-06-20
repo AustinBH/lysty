@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :show, :edit, :update, :new, :create]
   resources :stores, only: [:index, :show]
   resources :products, only: [:index, :show]
+  
   root to: 'pages#home'
   delete '/delete_list', to: 'lists#destroy', as: 'delete_list'
   get '/login', to: 'sessions#new'
