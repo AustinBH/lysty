@@ -39,7 +39,8 @@ Store.create(
 )
 end
 
-25.times do
+# ?? Accepts whole objects or knows to just take the id??
+25.times do #Smart enough to know it's a join table.
   ListProduct.create(
     list: List.all.sample,
     product: Product.all.sample

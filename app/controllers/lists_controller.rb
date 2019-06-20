@@ -36,10 +36,13 @@ class ListsController < ApplicationController
   end
 
   def create
+
     @user = User.find(session[:user_id])
     @list = List.new(list_params)
+
     @list.user = @user
     if @list.save
+
       if request.referrer.include?("products/")
         @product = Product.find(session[:product_id])
         ListProduct.create(list: @list, product: @product)
@@ -53,6 +56,7 @@ class ListsController < ApplicationController
   end
 
   def add_product
+
     @product = Product.find(session[:product_id])
     @list = List.find(params[:lists][:list_id])
     ListProduct.create(list: @list, product: @product)

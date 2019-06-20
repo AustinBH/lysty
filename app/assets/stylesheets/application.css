@@ -13,30 +13,44 @@
  *= require_tree .
  *= require_self
  */
+ h1 {
+   font-size: 2.5rem;
+ }
    form {
      display: inline;
    }
    div.center {
      text-align: center;
-     margin-top: 10rem;
+     margin-top: 8rem;
    }
-   div.container h1 {
-     font-size: 4.5rem;
+   h1.main-head {
+     font-size: 4rem;
      margin-bottom: 1rem;
    }
 
-   div.login, div.login.div.row {
+   div.log-sign {
      max-width: 270px;
      text-align: center;
    }
 
-   div.login div.row div {
+   .log-sign-field {
      text-align: left;
    }
 
-   div.login {
+   div.log-sign {
      margin-left: auto;
      margin-right: auto;
+   }
+
+   #login-flash{
+     text-align: left;
+     font-size: 14px;
+     color: red;
+     height: 25px;
+   }
+
+   #sign-submit {
+     margin-top: 15px;
    }
    /* .logged-in {
      margin-top: 30px;
