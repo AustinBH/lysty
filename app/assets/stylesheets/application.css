@@ -16,7 +16,7 @@
    form {
      display: inline;
    }
-   div.container .welcome {
+   div.center {
      text-align: center;
      margin-top: 10rem;
    }
@@ -25,6 +25,19 @@
      margin-bottom: 1rem;
    }
 
+   div.login, div.login.div.row {
+     max-width: 270px;
+     text-align: center;
+   }
+
+   div.login div.row div {
+     text-align: left;
+   }
+
+   div.login {
+     margin-left: auto;
+     margin-right: auto;
+   }
    /* .logged-in {
      margin-top: 30px;
    } */
