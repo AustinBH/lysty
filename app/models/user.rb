@@ -50,28 +50,23 @@ class User < ApplicationRecord
     stores
   end
 
-  def sample_1
-    self.lists[0]
+  #condensed all 3 of the below methods from the original 6 methods
+  def list_sample(element)
+    if self.lists != []
+      self.lists[element]
+    end
   end
 
-  def sample_2
-    self.lists[1]
+  def product_sample(element)
+    if self.products != []
+      self.products[element]
+    end
   end
 
-  def product_sample_1
-    self.products[0]
-  end
-
-  def product_sample_2
-      self.products[1]
-  end
-
-  def store_sample_1
-    self.stores[0]
-  end
-
-  def store_sample_2
-      self.stores[1]
+  def store_sample(element)
+    if self.stores != []
+      self.stores[element]
+    end
   end
 
 end

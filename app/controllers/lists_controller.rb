@@ -55,7 +55,7 @@ class ListsController < ApplicationController
 
   def add_product
     #Finding the @product and @list to pass through to create a ListProduct,
-    #which will be displayed on the list. 
+    #which will be displayed on the list.
     @product = Product.find(session[:product_id])
     @list = List.find(params[:lists][:list_id])
     ListProduct.create(list: @list, product: @product)
