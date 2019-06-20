@@ -27,14 +27,17 @@
     <div class="card-header text-success">My Products</div>
     <div class="card-body text-success">
       <h5 class="card-title">You have <%= @user.products.count %> products</h5>
-      <% 2.times do |i|
-        if @user.product[i-1]
-            <p class="card-text"><%= link_to @user.product_sample[i-1].name, @user.product_sample[i-1] %></p>
+      <% i = 0 %>
+      <% while @user.products.count < 3 do   %>
+      <%# byebug %>
+
+        <% if @user.products[i] %>
+              <p class="card-text"> <%= link_to @user.product_sample(i).name, @user.product_sample(i) %> </p>
         <% end %>
-      end %>
+        <% i += 1 %>
+      <% end %>
         <p>...</p>
         <a class="btn btn-info" href="/my_products">see all</a>
-      <% end %>
     </div>
   </div>
 
