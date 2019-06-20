@@ -50,4 +50,28 @@ class User < ApplicationRecord
     stores
   end
 
+  def sample_1
+    self.lists[0]
+  end
+
+  def sample_2
+    self.lists[1]
+  end
+
+  def product_sample_1
+    self.products[0]
+  end
+
+  def product_sample_2
+      self.products[1]
+  end
+
+  def store_sample_1
+    self.stores[0]
+  end
+
+  def store_sample_2
+      self.stores[1]
+  end
+
 end
