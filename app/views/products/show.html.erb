@@ -1,10 +1,29 @@
-<h3><%= @product.name %></h3>
-<p>Price: $<%= @product.price %></p>
-<p>Origin: <%= @product.origin %></p>
-<p><%= @product.out_of_stock %></p>
+<div class="row">
 
-<%= form_for :lists, url: '/add_product' do |f| %>
-  <%= f.label 'Add this product to my list' %>
-  <%= f.collection_select :list_id, user_lists, :id, :title %>
-  <%= f.submit 'Add' %>
-<% end %>
+  <div class="col">
+    <h3 class="text-success"><%= @product.name %></h3>
+    <p>Price: $<%= @product.price %></p>
+    <p>Origin: <%= @product.origin %></p>
+    <p><%= @product.out_of_stock %></p>
+  </div>
+
+  <div class="col">
+    <%= form_for :lists, url: '/add_product' do |f| %>
+      <h5 class="text-success mt-5"><%= f.label 'Add this product to my list:' %></h5>
+      <div class="input-group">
+        <%= f.collection_select :list_id, user_lists, :id, :title, class: "custom-select" %>
+        <div class="input-group-append">
+          <%= f.submit 'Add', class: "btn btn-success" %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+
+  <div class="col">
+    <div class=" mt-5">
+      <h5 class="text-success">Add to a new list:</h5>
+      <%= render '/lists/form', list: List.new %>
+    </div>
+    <p class="text-weight-light text-info ml-3"><%= flash[:message] %></p>
+  </div>
+</div>

@@ -50,3 +50,7 @@
      font-size: 30px;
      font-family: Helvetica, sans-serif;
    }
+
+   select {
+     width: 185px;
+   }
