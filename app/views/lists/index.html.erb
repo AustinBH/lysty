@@ -1,4 +1,4 @@
-<h2>Your Lists:</h2>
+<h2 class="text-success">Your Lists:</h2>
 <ul style= "list-style: none">
   <% @lists.each do |list| %>
     <li><%= link_to list.title, list %></li>
@@ -7,4 +7,4 @@
 
   <%= @no_lists %>
 
-  <%= button_to 'New List', '/lists/new', method: :get %>
+  <%= button_to 'New List', '/lists/new', method: :get, class: 'btn btn-outline-success' %>

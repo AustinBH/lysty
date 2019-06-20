@@ -10,12 +10,12 @@ class StoresController < ApplicationController
 
   def filter
     @stores = []
-    stores = Store.all
+    all_stores = Store.all
     @list = List.find(session[:list_id])
     @products = @list.products
 
     @products.each do |product|
-      stores.each do |store|
+      all_stores.each do |store|
         if store.products.include?(product) && !@stores.include?(store)
           @stores << store
         end

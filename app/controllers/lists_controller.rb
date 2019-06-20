@@ -46,7 +46,16 @@ class ListsController < ApplicationController
     #setting the association of new list to current user
     @list.user = @user
     if @list.save
+<<<<<<< HEAD
       #lists_path = lists index
+=======
+      if request.referrer.include?("products/")
+        @product = Product.find(session[:product_id])
+        ListProduct.create(list: @list, product: @product)
+        flash[:message] = "Saved"
+        redirect_to @product and return
+      end
+>>>>>>> 58ac4a793395afc4de99b03aa193b0fe50da5a54
       redirect_to lists_path
     else
       render :new

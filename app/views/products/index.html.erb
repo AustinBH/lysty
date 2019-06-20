@@ -1,8 +1,8 @@
 <% @products.each do |product| %>
 
-  <h3><%= link_to product.name, product %></h3>
+  <h3><a class="text-success" href="/products/<%= product.id %>"><%= product.name %></a></h3>
     <p>Price: $<%= product.price %></p>
     <p>Origin: <%= product.origin %></p>
-    <%= product.out_of_stock %>
+    <p class="font-weight-light text-danger"><%= product.out_of_stock %></p>
 
 <% end %>

@@ -16,20 +16,41 @@
    form {
      display: inline;
    }
-   .welcome {
+   div.center {
      text-align: center;
-     margin-top: 30px;
+     margin-top: 10rem;
+   }
+   div.container h1 {
+     font-size: 4.5rem;
+     margin-bottom: 1rem;
    }
 
-   .logged-in {
-     margin-top: 30px;
+   div.login, div.login.div.row {
+     max-width: 270px;
+     text-align: center;
    }
-   div.logged-in div {
+
+   div.login div.row div {
+     text-align: left;
+   }
+
+   div.login {
+     margin-left: auto;
+     margin-right: auto;
+   }
+   /* .logged-in {
+     margin-top: 30px;
+   } */
+   /* div.logged-in div {
      margin: 10px;
      display: inline-block;
-   }
+   } */
 
    .welcome-user {
-     font-size: 20px;
+     font-size: 30px;
      font-family: Helvetica, sans-serif;
+   }
+
+   select {
+     width: 185px;
    }
