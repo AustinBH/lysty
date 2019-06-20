@@ -1,13 +1,14 @@
-<h2>Edit your list:</h2>
+<div class="row">
 
-<%= render 'form' %>
+  <div class="col">
+    <h2 class="text-success">Edit your list:</h2>
+      <%= render 'form' %>
 
-<ol>
-  <% @products.each do |product| %>
-    <li> <%= link_to product.name, product %> <%= button_to 'Delete', delete_product_path(:id => product.id) %></li>
-  <% end %>
-</ol>
-
-<br><br>
-
-<%= link_to 'Delete this list', delete_list_path, method: :delete, data: {confirm: "Are you sure?"} %>
+      <ol class="list-group">
+        <% @products.each do |product| %>
+          <li class="mt-1 ml-5"> <%= link_to product.name, product %> <%= button_to 'Delete', delete_product_path(:id => product.id), class: 'btn btn-outline-secondary' %></li>
+        <% end %>
+      </ol>
+    <%= button_to 'Delete this list', delete_list_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-danger' %>
+  </div>
+</div>

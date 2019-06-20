@@ -4,35 +4,34 @@
     <title>Lysty</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <span class="navbar-brand">Listy</span>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <% if logged_in? %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="navbar-brand">Listy</span>
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/lists/new">New List</a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/products">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/stores">Stores</a>
-        </li>
-        </ul>
-        <span class="navbar-nav justify-content-end">
-          <a class="nav-link" href="/my_account">My Account</a>
-          <a class="nav-link" href="/logout">Logout</a>
-        </span>
-      <% end %>
-
-</nav>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/new">New List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stores">Stores</a>
+          </li>
+          </ul>
+          <span class="navbar-nav justify-content-end">
+            <a class="nav-link" href="/my_account">My Account</a>
+            <a class="nav-link" href="/logout">Logout</a>
+          </span>
+        <% end %>
+  </nav>
 
 
 
