@@ -4,7 +4,6 @@ class ListsController < ApplicationController
   before_action :list_redirect, only: [:show, :edit]
 
   def index
-    byebug
     @user = User.find(session[:user_id])
     @lists = @user.lists
     if @lists == []

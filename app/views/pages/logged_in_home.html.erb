@@ -3,15 +3,47 @@
 
 <span class="welcome-user"><%= "Welcome back, #{@user.name}" %></span>
 
-<div class="logged-in">
-  <div class="">
-    <%= button_to "My Lists", lists_path, method: :get, class: "btn btn-outline-success" %>
-  </div>
-  <div class="">
-    <%= button_to "My Stores", my_stores_path, method: :get, class: "btn btn-outline-success" %>
+<div class="row">
+
+
+
+  <div class="card border-success mb-3  " style="width: 18rem;">
+    <div class="card-header text-success"> My Lists </div>
+    <div class="card-body text-success">
+      <h5 class="card-title">You have <%= @user.lists_count %> lists</h5>
+      <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
+      <p class="card-text"><%= link_to @user.sample_2.title, @user.sample_2 %></p>
+      <p>...</p>
+      <a class="btn btn-info" href="/lists">see all</a>
+    </div>
   </div>
 
-  <div class="">
-    <%= button_to "My Products", my_products_path, method: :get, class: "btn btn-outline-success" %>
+  <div class="card border-success mb-3  offset-md-1" style="width: 18rem;">
+    <div class="card-header text-success">My Products</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">You have <%= @user.products.count %> products</h5>
+      <% if @user.products.count == 1 %>
+        <p class="card-text"><%= link_to @user.product_sample_1.name, @user.product_sample_1 %></p>
+      <% elsif @user.products.count > 1 %>
+        <p class="card-text"><%= link_to @user.product_sample_2.name, @user.product_sample_2 %></p>
+        <p>...</p>
+        <a class="btn btn-info" href="/lists">see all</a>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="card border-success mb-3  offset-md-1" style="width: 18rem;">
+    <div class="card-header text-success">My Stores</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">You have <%= @user.stores.count %> stores</h5>
+      <% if @user.stores.count == 1 %>
+        <p class="card-text"><%= link_to @user.store_sample_1.name, @user.store_sample_1 %></p>
+      <% elsif @user.stores.count > 1 %>
+        <p class="card-text"><%= link_to @user.store_sample_2.name, @user.store_sample_2 %></p>
+        <p>...</p>
+        <a class="btn btn-info" href="/lists">see all</a>
+      <% end %>
+    </div>
   </div>
 </div>
