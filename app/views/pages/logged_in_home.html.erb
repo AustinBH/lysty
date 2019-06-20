@@ -14,6 +14,7 @@
       <% if @user.lists_count == 1 %>
         <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
       <% elsif @user.lists_count > 1 %>
+        <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
         <p class="card-text"><%= link_to @user.sample_2.title, @user.sample_2 %></p>
         <p>...</p>
         <a class="btn btn-info" href="/lists">see all</a>
