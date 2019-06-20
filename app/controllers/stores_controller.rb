@@ -26,7 +26,6 @@ class StoresController < ApplicationController
   def my_stores
     @user = User.find(session[:user_id])
     @stores = @user.stores
-    render :index
   end
 
 end
