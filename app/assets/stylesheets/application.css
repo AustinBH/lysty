@@ -68,3 +68,17 @@
    select {
      width: 185px;
    }
+
+   .stores-products {
+     width: 80%;
+     min-width: 200px;
+     height: 170px;
+   }
+
+   div.card-header h5 {
+     max-height: 32px;
+   }
+
+   div.card-text p {
+     margin-bottom: 0px;
+   }
