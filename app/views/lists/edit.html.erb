@@ -2,7 +2,7 @@
 
   <div class="col">
     <h2 class="text-success">Edit your list:</h2>
-      <%= render 'form' %>
+      <%= render 'form', list: @list %>
 
       <ol class="list-group">
         <% @products.each do |product| %>

@@ -20,5 +20,10 @@
   </div>
 
   <div class="col">
+    <div class=" mt-5">
+      <h5 class="text-success">Add to a new list:</h5>
+      <%= render '/lists/form', list: List.new %>
+    </div>
+    <p class="text-weight-light text-info ml-3"><%= flash[:message] %></p>
   </div>
 </div>

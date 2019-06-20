@@ -40,6 +40,12 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = @user
     if @list.save
+      if request.referrer.include?("products/")
+        @product = Product.find(session[:product_id])
+        ListProduct.create(list: @list, product: @product)
+        flash[:message] = "Saved"
+        redirect_to @product and return
+      end
       redirect_to lists_path
     else
       render :new
