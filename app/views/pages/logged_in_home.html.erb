@@ -5,16 +5,20 @@
 
 <div class="row">
 
-
-
+  <!-- Corrected lists logic to account for user having no lists   -->
+  <!-- Changed stores and products to display 2 options if a user has more than 1 of either -->
   <div class="card border-success mb-3  " style="width: 18rem;">
     <div class="card-header text-success"> My Lists </div>
     <div class="card-body text-success">
       <h5 class="card-title">You have <%= @user.lists_count %> lists</h5>
-      <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
-      <p class="card-text"><%= link_to @user.sample_2.title, @user.sample_2 %></p>
-      <p>...</p>
-      <a class="btn btn-info" href="/lists">see all</a>
+      <% if @user.lists_count == 1 %>
+        <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
+      <% elsif @user.lists_count > 1 %>
+        <p class="card-text"><%= link_to @user.sample_1.title, @user.sample_1 %></p>
+        <p class="card-text"><%= link_to @user.sample_2.title, @user.sample_2 %></p>
+        <p>...</p>
+        <a class="btn btn-info" href="/lists">see all</a>
+      <% end %>
     </div>
   </div>
 
@@ -25,11 +29,11 @@
       <% if @user.products.count == 1 %>
         <p class="card-text"><%= link_to @user.product_sample_1.name, @user.product_sample_1 %></p>
       <% elsif @user.products.count > 1 %>
+        <p class="card-text"><%= link_to @user.product_sample_1.name, @user.product_sample_1 %></p>
         <p class="card-text"><%= link_to @user.product_sample_2.name, @user.product_sample_2 %></p>
         <p>...</p>
-        <a class="btn btn-info" href="/lists">see all</a>
+        <a class="btn btn-info" href="/my_products">see all</a>
       <% end %>
-
     </div>
   </div>
 
@@ -40,9 +44,10 @@
       <% if @user.stores.count == 1 %>
         <p class="card-text"><%= link_to @user.store_sample_1.name, @user.store_sample_1 %></p>
       <% elsif @user.stores.count > 1 %>
+        <p class="card-text"><%= link_to @user.store_sample_1.name, @user.store_sample_1 %></p>
         <p class="card-text"><%= link_to @user.store_sample_2.name, @user.store_sample_2 %></p>
         <p>...</p>
-        <a class="btn btn-info" href="/lists">see all</a>
+        <a class="btn btn-info" href="/my_stores">see all</a>
       <% end %>
     </div>
   </div>
