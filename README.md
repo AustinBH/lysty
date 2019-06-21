@@ -34,4 +34,8 @@ Once you have your database setup you can run rails s in your terminal to begin 
 
 ![](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)
 
+As a user you can signup and login to the site, you can add products to your lists, create new lists view all of the product and store information, update your account information, and edit your lists.
+
+There are also several different filters which are available to users. The my stores filter on the home page allows a user to see which stores the products on their lists are sold in. Similarly the my products filter will display all of the products that are found in a users lists. Users also have the option to see which stores sell the products on a specific list from that lists page. The products also have an out of stock indicator that is displayed wherever you can see the product information.
+
 Once we have deployed this application to a hosting service we will include a link to the website as well.
