@@ -1,15 +1,15 @@
-<div class="row">
+<div class="row justify-content-md-center">
 
-  <div class="col">
+  <div class="col mt-3">
     <h3 class="text-success"><%= @product.name %></h3>
     <p>Price: $<%= @product.price %></p>
     <p>Origin: <%= @product.origin %></p>
     <p><%= @product.out_of_stock %></p>
   </div>
 
-  <div class="col">
+  <div class="col mt-5">
     <%= form_for :lists, url: '/add_product' do |f| %>
-      <h5 class="text-success mt-5"><%= f.label 'Add this product to my list:' %></h5>
+      <h5 class="text-success"><%= f.label 'Add this product to my list:' %></h5>
       <div class="input-group">
         <%= f.collection_select :list_id, user_lists, :id, :title, class: "custom-select" %>
         <div class="input-group-append">
@@ -19,11 +19,11 @@
       <% end %>
   </div>
 
-  <div class="col">
-    <div class=" mt-5">
+  <div class="col mt-5">
+    <div>
       <h5 class="text-success">Add to a new list:</h5>
       <%= render '/lists/form', list: List.new %>
     </div>
-    <p class="text-weight-light text-info ml-3"><%= flash[:message] %></p>
+    <p class="text-weight-light text-info ml-3"><%= flash[:add_product_error] %></p>
   </div>
 </div>
