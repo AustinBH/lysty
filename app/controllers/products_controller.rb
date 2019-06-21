@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
 
   def index
     products = Product.all
-    @in_stock = products.select {|product| !product.out_of_stock}
-    @out_of_stock = products.select {|product| product.out_of_stock}
+    @in_stock = Product.in_stock(products)
+    @out_of_stock = Product.out_of_stock(products)
   end
 
   def show
@@ -14,8 +14,8 @@ class ProductsController < ApplicationController
   def my_products
     @user = User.find(session[:user_id])
     products = @user.products
-    @in_stock = products.select {|product| !product.out_of_stock}
-    @out_of_stock = products.select {|product| product.out_of_stock}
+    @in_stock = Product.in_stock(products)
+    @out_of_stock = Product.out_of_stock(products)
   end
 
 end

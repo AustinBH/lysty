@@ -2,7 +2,7 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
-    @most_inventory = @stores.max {|store| store.products.count}
+    @most_inventory = Store.most_products[0..2]
   end
 
   def show
@@ -10,19 +10,11 @@ class StoresController < ApplicationController
     @products = @store.products
   end
 
+  #refactored method into list class to clean up controller
   def filter
-    @stores = []
-    all_stores = Store.all
     @list = List.find(session[:list_id])
     @products = @list.products
-
-    @products.each do |product|
-      all_stores.each do |store|
-        if store.products.include?(product) && !@stores.include?(store)
-          @stores << store
-        end
-      end
-    end
+    @stores = @list.filter_list(@products)
   end
 
   def my_stores

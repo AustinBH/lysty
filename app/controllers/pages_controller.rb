@@ -5,7 +5,6 @@ class PagesController < ApplicationController ###What does this do???
     if session[:user_id] != nil
       @user = User.find(session[:user_id])
       @no_lists = ""
-
       render 'logged_in_home'
     end
   end
