@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ .container{
+   margin-top: 6rem;
+ }
+
+ .sm-container {
+   max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+ }
  h1 {
    font-size: 2.5rem;
  }
@@ -21,8 +30,10 @@
    }
    div.center {
      text-align: center;
-     margin-top: 8rem;
+     margin-top: 6rem;
+     margin-bottom: 20px;
    }
+
    h1.main-head {
      font-size: 4rem;
      margin-bottom: 1rem;
@@ -30,35 +41,51 @@
 
    div.log-sign {
      max-width: 270px;
+     min-width: 270px;
      text-align: center;
+     margin-left: 32%;
+     margin-right: auto;
+     display: inline-block;
+
    }
 
    .log-sign-field {
      text-align: left;
    }
 
-   div.log-sign {
-     margin-left: auto;
-     margin-right: auto;
-   }
+   /* div.log-sign {
 
-   #login-flash{
+   } */
+
+   .login-flash,
+   .login-flash h2{
      text-align: left;
      font-size: 14px;
      color: red;
      height: 25px;
    }
 
+   .login-container {
+     position:relative;
+   }
+   .sign-errors.login-flash{
+     position: relative;
+     height: 125px;
+     max-width: 215px;
+     display: inline-block;
+     margin-top: 15px;
+}
+
    #sign-submit {
      margin-top: 15px;
    }
-   /* .logged-in {
-     margin-top: 30px;
-   } */
-   /* div.logged-in div {
-     margin: 10px;
-     display: inline-block;
-   } */
+
+   #sign-errors {
+    font-size: 14px;
+    display: inline-block;
+    height: 150px;
+   }
+
 
    .welcome-user {
      font-size: 30px;
@@ -81,4 +108,15 @@
 
    div.card-text p {
      margin-bottom: 0px;
+   }
+
+   /* Pages */
+
+   .text-success {
+     margin-bottom: 30px;
+   }
+   .center div.input-group {
+     margin-left: auto;
+     margin-right: auto;
+     width: 280px ;
    }

@@ -1,5 +1,5 @@
 <% if @user.any_errors? %>
-  <div id="error_explanation">
+  <div class="sign-errors login-flash" id="error_explanation">
     <h2>
       <%= pluralize(@user.error_count, "error") %>
       prohibited your account from being created:
