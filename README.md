@@ -14,7 +14,7 @@ At this time, the application is not currently being hosted on a website but we 
 
 * Ruby version
 
-This application uses Ruby version 2.6.
+This application uses Ruby version 2.6.3.
 
 * Configuration
 
@@ -22,7 +22,7 @@ At this time, you will need to clone down the repository to begin using the appl
 
 * Database creation
 
-Lysty uses postgresql so you can run rails db:setup to migrate the seed data to your local database.
+Lysty uses postgresql so you can run rails db:setup to setup your local database.
 
 * Database initialization
 
