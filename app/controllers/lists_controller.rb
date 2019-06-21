@@ -46,7 +46,7 @@ class ListsController < ApplicationController
       if request.referrer.include?("products/")
         @product = Product.find(session[:product_id])
         ListProduct.create(list: @list, product: @product)
-        flash[:add_product_error] = "Saved"
+        flash[:add_list] = "Saved"
         redirect_to @product and return
       end
       redirect_to lists_path
@@ -60,9 +60,8 @@ class ListsController < ApplicationController
     if params[:lists]
       @list = List.find(params[:lists][:list_id])
       ListProduct.create(list: @list, product: @product)
-      redirect_to @list
-    else
       redirect_to @product
+      flash[:add_product] = " #{@product.name} added"
     end
   end
 
