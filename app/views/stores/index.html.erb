@@ -1,3 +1,19 @@
-<h1 class="text-success">All Stores</h1>
+<div class="row">
 
-<%= render 'all_stores' %>
+  <div class="col">
+    <h1 class="text-success">All Stores</h1>
+    <%= render 'all_stores' %>
+  </div>
+
+  <div class="col">
+    <ul class="list-group">
+      <h1 class="text-success">Store with the most products</h1>
+      <div class="card">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to @most_inventory.name, @most_inventory, class: 'text-success mt-4' %>
+          <span class="badge badge-primary badge-pill"><%= @most_inventory.products.count %> Products</span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
