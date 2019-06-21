@@ -7,4 +7,16 @@ class Store < ApplicationRecord
   validates :phone_number, presence: true
   validates :website, presence: true
 
+  #refactoring product count methods into one command
+  def product_count
+    self.products.count
+  end
+
+  #adding method to sort stores by their product count
+  def self.most_products
+    self.all.sort_by do |store|
+      -store.product_count
+    end
+  end
+
 end
