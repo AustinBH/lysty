@@ -22,7 +22,7 @@ At this time, you will need to clone down the repository to begin using the appl
 
 * Database creation
 
-Lysty uses postgresql so you can run rails db:setup to migrate the seed data to your local database.
+Lysty uses postgresql so you can run rails db:setup to setup your local database.
 
 * Database initialization
 
