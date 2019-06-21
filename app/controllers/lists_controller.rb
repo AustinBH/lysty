@@ -56,11 +56,14 @@ class ListsController < ApplicationController
   end
 
   def add_product
-
     @product = Product.find(session[:product_id])
-    @list = List.find(params[:lists][:list_id])
-    ListProduct.create(list: @list, product: @product)
-    redirect_to @list
+    if params[:lists]
+      @list = List.find(params[:lists][:list_id])
+      ListProduct.create(list: @list, product: @product)
+      redirect_to @list
+    else
+      redirect_to @product
+    end
   end
 
   def remove_product
