@@ -17,14 +17,14 @@ User.create(
 )
 end
 
-5.times do
+10.times do
 List.create(
   title: Faker::Space.star,
   user: User.all.sample
 )
 end
 
-25.times do
+40.times do
 Product.create(
   name: Faker::Commerce.product_name,
   price: Faker::Commerce.price,
@@ -32,7 +32,7 @@ Product.create(
 )
 end
 
-10.times do
+20.times do
 Store.create(
   name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
   location: Faker::Address.full_address,
@@ -42,14 +42,14 @@ Store.create(
 end
 
 # ?? Accepts whole objects or knows to just take the id??
-25.times do #Smart enough to know it's a join table.
+30.times do #Smart enough to know it's a join table.
   ListProduct.create(
     list: List.all.sample,
     product: Product.all.sample
   )
 end
 
-25.times do
+30.times do
   ProductStore.create(
     product: Product.all.sample,
     store: Store.all.sample
