@@ -4,7 +4,9 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(name: params[:session][:name])
     if @user && @user.authenticate(params[:session][:password])
-      # byebug
+      #adding this clear to prevent cookies from storing incorrect login data
+      #after a user logs out
+      flash.delete :message
       session[:user_id] = @user.id #creates a new session when set?
       redirect_to '/'
     else
