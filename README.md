@@ -8,7 +8,7 @@ This application allows you to view various products and add them to a list. The
 
 At this time, the application is not currently being hosted on a website but we do plan to release it at a later date
 
-**Requirements and Setup**
+# Requirements and Setup
 
 ![](https://media.giphy.com/media/T5nP7Nwu5FzMc/giphy.gif)
 
@@ -28,7 +28,7 @@ Lysty uses postgresql so you can run rails db:setup to migrate the seed data to 
 
 You will need to use rails db:seed to seed your postgresql database with our current seed data.
 
-**Using the application**
+# Using the application
 
 Once you have your database setup you can run rails s in your terminal to begin running your local server. You can then navigate to localhost:3000 and use the application.
 
