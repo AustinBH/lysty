@@ -18,7 +18,7 @@
       <% if @user.lists_count > 1 %>
         <p class="card-text"><%= link_to @user.list_sample(1).title, @user.list_sample(1) %></p>
         <p>...</p>
-        <a class="btn btn-info float-right" href="/lists">see all</a>
+        <a class="btn btn-outline-primary float-right" href="/lists">see all</a>
       <% end %>
     </div>
   </div>
@@ -38,7 +38,7 @@
       <% if @user.products.count > 1 %>
       <p class="card-text"><%= link_to @user.product_sample(1).name, @user.product_sample(1) %></p>
         <p>...</p>
-        <a class="btn btn-info float-right" href="/my_products">see all</a>
+        <a class="btn btn-outline-primary float-right" href="/my_products">see all</a>
       <% end %>
 
     </div>
@@ -54,7 +54,7 @@
       <% if @user.stores.count > 1 %>
       <p class="card-text"><%= link_to @user.store_sample(1).name, @user.store_sample(1) %></p>
         <p>...</p>
-        <a class="btn btn-info float-right" href="/my_stores">see all</a>
+        <a class="btn btn-outline-primary float-right" href="/my_stores">see all</a>
       <% end %>
     </div>
   </div>
