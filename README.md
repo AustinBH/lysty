@@ -14,7 +14,7 @@ At this time, the application is not currently being hosted on a website but we 
 
 * Ruby version
 
-This application uses Ruby version 2.6.
+This application uses Ruby version 2.6.3.
 
 * Configuration
 
