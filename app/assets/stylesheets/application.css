@@ -82,3 +82,11 @@
    div.card-text p {
      margin-bottom: 0px;
    }
+
+   .show {
+     margin: auto;
+     margin-top: 32px;
+     height: 400px;
+     width: 500px;
+     padding: 10px;
+   }

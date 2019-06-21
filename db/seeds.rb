@@ -35,7 +35,9 @@ end
 10.times do
 Store.create(
   name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
-  location: Faker::Address.full_address
+  location: Faker::Address.full_address,
+  phone_number: Faker::PhoneNumber.phone_number,
+  website: Faker::Internet.url
 )
 end
 
