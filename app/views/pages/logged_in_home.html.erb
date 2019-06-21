@@ -1,17 +1,17 @@
+<div class="welcome center mt-0">
+  <%= render 'welcome' %>
+  <% if @user.lists_count > 0 %>
+    <span class="welcome-user"><%= "Welcome back, #{@user.name}" %></span>
+  <% else %>
+    <span class="welcome-user"><%= "Welcome #{@user.name}" %></span>
+  <% end %>
+</div>
 
-<%= render 'welcome' %>
-
-<span class="welcome-user"><%= "Welcome back, #{@user.name}" %></span>
-
-<div class="row">
-
-
-
+<div class="row mt-3">
   <div class="card border-success mb-3  " style="width: 18rem;">
     <div class="card-header text-success"> My Lists </div>
     <div class="card-body text-success">
       <h5 class="card-title">You have <%= @user.lists_count %> lists</h5>
-
       <% if @user.lists_count > 0 %>
         <p class="card-text"><%= link_to @user.list_sample(0).title, @user.list_sample(0) %></p>
       <% end %>
@@ -32,9 +32,10 @@
 
         end
       end  %>
-      <% if @user.products.count == 1 %>
+      <% if @user.products.count > 0 %>
         <p class="card-text"><%= link_to @user.product_sample(0).name, @user.product_sample(0) %></p>
-      <% elsif @user.products.count > 1 %>
+      <% end %>
+      <% if @user.products.count > 1 %>
       <p class="card-text"><%= link_to @user.product_sample(1).name, @user.product_sample(1) %></p>
         <p>...</p>
         <a class="btn btn-info float-right" href="/my_products">see all</a>
@@ -47,9 +48,10 @@
     <div class="card-header text-success">My Stores</div>
     <div class="card-body text-success">
       <h5 class="card-title">You have <%= @user.stores.count %> stores</h5>
-      <% if @user.stores.count == 1 %>
+      <% if @user.stores.count > 0 %>
         <p class="card-text"><%= link_to @user.store_sample(0).name, @user.store_sample(0) %></p>
-      <% elsif @user.stores.count > 1 %>
+      <% end %>
+      <% if @user.stores.count > 1 %>
       <p class="card-text"><%= link_to @user.store_sample(1).name, @user.store_sample(1) %></p>
         <p>...</p>
         <a class="btn btn-info float-right" href="/my_stores">see all</a>
