@@ -2,6 +2,7 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
+    @most_inventory = @stores.max {|store| store.products.count}
   end
 
   def show
