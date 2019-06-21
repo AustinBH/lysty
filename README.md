@@ -8,7 +8,9 @@ This application allows you to view various products and add them to a list. The
 
 At this time, the application is not currently being hosted on a website but we do plan to release it at a later date
 
-**Requirements**
+**Requirements and Setup**
+
+![](https://media.giphy.com/media/T5nP7Nwu5FzMc/giphy.gif)
 
 * Ruby version
 
@@ -28,6 +30,8 @@ You will need to use rails db:seed to seed your postgresql database with our cur
 
 **Using the application**
 
+Once you have your database setup you can run rails s in your terminal to begin running your local server. You can then navigate to localhost:3000 and use the application.
+
 ![](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)
 
-Once you have your database setup you can run rails s in your terminal to begin running your local server. Once we have deployed this application to a hosting service we will include a link to the website itself.
+Once we have deployed this application to a hosting service we will include a link to the website as well.
