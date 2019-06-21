@@ -61,7 +61,7 @@ class ListsController < ApplicationController
       @list = List.find(params[:lists][:list_id])
       ListProduct.create(list: @list, product: @product)
       redirect_to @product
-      flash[:add_product] = " #{@product.name} added"
+      flash[:add_product] = " #{@product.name} added to #{@list.title}"
     end
   end
 
