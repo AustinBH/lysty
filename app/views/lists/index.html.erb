@@ -1,10 +1,41 @@
-<h2 class="text-success">Your Lists:</h2>
-<ul style= "list-style: none">
-  <% @lists.each do |list| %>
-    <li><%= link_to list.title, list %></li>
-  <% end %>
-</ul>
+<div class="sm-container card">
 
-  <%= @no_lists %>
+<!-- <div class="col-4 justify-content-around">
+  <h2 class="text-success">Your Lists:</h2>
+</div>
 
-  <%= button_to 'New List', '/lists/new', method: :get, class: 'btn btn-outline-success' %>
+<div class="col-6 justify-content-around">
+  <ol style= >
+    <%# @lists.each do |list| %>
+      <li><%#= link_to list.title, list %></li>
+    <%# end %>
+  </ol>
+
+    <%#= @no_lists %>
+
+    <%#= button_to 'New List', '/lists/new', method: :get, class: 'btn btn-outline-success' %>
+</div> -->
+
+<div class=" lists-card">
+    <div class="card-header">
+      <h3><a class="text-success">Your Lists:</h3>
+    </div>
+
+    <div class="card-text ml-2 listed-lists">
+      <ol style= >
+        <% @lists.each do |list| %>
+          <li><%= link_to list.title, list %></li>
+        <% end %>
+      </ol>
+
+        <%= @no_lists %>
+    </div>
+
+    <div class="new-list">
+        <%= button_to 'New List', '/lists/new', method: :get, class: 'btn btn-outline-success mb-3' %>
+    </div>
+
+  </div>
+
+
+</div>

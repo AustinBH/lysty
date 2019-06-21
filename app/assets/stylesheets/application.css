@@ -15,6 +15,7 @@
  */
  .container{
    margin-top: 6rem;
+   min-width: 400px;
  }
 
  .sm-container {
@@ -30,7 +31,7 @@
    }
    div.center {
      text-align: center;
-     margin-top: 6rem;
+     margin-top: 4rem;
      margin-bottom: 20px;
    }
 
@@ -61,6 +62,7 @@
    .login-flash h2{
      text-align: left;
      font-size: 14px;
+     font-weight: 100;
      color: red;
      height: 25px;
    }
@@ -97,18 +99,31 @@
    }
 
    .stores-products {
-     width: 80%;
-     min-width: 200px;
+     width: 90%;
+     min-width: 400px;
      height: 170px;
    }
 
-   div.card-header h5 {
-     max-height: 32px;
+   div.card-header {
+     height: 55px;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+
+   }
+
+   div.card-header h3 {
+     font-size: 25px;   }
+
+   div.card-text  {
+     margin-top: 10px;
    }
 
    div.card-text p {
      margin-bottom: 0px;
    }
+
+
 
    /* Pages */
 
@@ -128,4 +143,12 @@
      height: 400px;
      width: 500px;
      padding: 10px;
+   }
+
+  .btn {
+    min-width: 75px;
+   }
+
+   a {
+     color: black;
    }
