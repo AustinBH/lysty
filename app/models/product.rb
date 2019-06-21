@@ -16,4 +16,13 @@ class Product < ApplicationRecord
     end
   end
 
+  #added these methods to abstract filtering logic away from controller
+  def self.in_stock(products)
+    products.select {|product| !product.out_of_stock}
+  end
+
+  def self.out_of_stock(products)
+    products.select {|product| product.out_of_stock}
+  end
+
 end
