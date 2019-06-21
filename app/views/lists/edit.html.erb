@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="col">
+    <h1 class="text-success">Edit your list:</h1>
+      <%= render 'form', list: @list %>
+
+      <ol class="list-group">
+        <% @products.each do |product| %>
+          <li class="mt-1 ml-5"> <%= link_to product.name, product %>
+            <button class="btn">
+              <%= link_to '', delete_product_path(:id => product.id), method: :post, class: 'fa fa-trash', style: 'color: black;' %>
+            </button>
+          </li>
+        <% end %>
+      </ol>
+    <%= button_to 'Delete this list', delete_list_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-danger mt-3 ml-3' %>
+  </div>
+</div>

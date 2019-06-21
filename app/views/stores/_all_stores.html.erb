@@ -1,0 +1,14 @@
+<% @stores.each do |store| %>
+
+  <div class="card mt-3 stores-products">
+    <div class="card-header">
+      <h3><%= link_to store.name, store, class: 'text-success' %></h3>
+    </div>
+    <div class="card-text ml-2">
+      <p>Address: <%= store.location %></p>
+      <p>Phone Number: <%= store.phone_number %></p>
+      <p>Website: <%= store.website %></p>
+    </div>
+  </div>
+
+<% end %>

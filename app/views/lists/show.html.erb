@@ -1,0 +1,12 @@
+<h1 class="text-secondary"><%= @list.title %></h1>
+
+<ol>
+  <% @products.each do |product| %>
+    <li> <%= link_to product.name, product %> </li>
+    <p class="font-weight-light text-danger"><%= product.out_of_stock %></p>
+  <% end %>
+</ol>
+
+<%= button_to 'Edit List', edit_list_path(@list), method: :get, class: 'btn btn-outline-warning' %>
+
+<%= button_to 'Filter Stores by List', filter_stores_path, method: :get, class: 'btn btn-outline-primary' %>

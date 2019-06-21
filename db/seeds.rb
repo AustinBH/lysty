@@ -11,18 +11,20 @@
 5.times do
 User.create(
   name: Faker::Games::SuperSmashBros.fighter,
-  email: Faker::Internet.email
+  email: Faker::Internet.email,
+  password: "123",
+  password_confirmation: "123"
 )
 end
 
-5.times do
+10.times do
 List.create(
   title: Faker::Space.star,
   user: User.all.sample
 )
 end
 
-10.times do
+40.times do
 Product.create(
   name: Faker::Commerce.product_name,
   price: Faker::Commerce.price,
@@ -30,9 +32,26 @@ Product.create(
 )
 end
 
-10.times do
+20.times do
 Store.create(
   name: "#{Faker::Color.color_name.capitalize} #{Faker::Superhero.power}",
-  location: Faker::Address.full_address
+  location: Faker::Address.full_address,
+  phone_number: Faker::PhoneNumber.phone_number,
+  website: Faker::Internet.url
 )
+end
+
+# ?? Accepts whole objects or knows to just take the id??
+30.times do #Smart enough to know it's a join table.
+  ListProduct.create(
+    list: List.all.sample,
+    product: Product.all.sample
+  )
+end
+
+30.times do
+  ProductStore.create(
+    product: Product.all.sample,
+    store: Store.all.sample
+  )
 end

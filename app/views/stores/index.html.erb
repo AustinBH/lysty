@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="col">
+    <h1 class="text-success">All Stores</h1>
+    <%= render 'all_stores' %>
+  </div>
+
+  <div class="col">
+    <ul class="list-group">
+      <h1 class="text-success">Stores with the most inventory</h1>
+      <div class="card">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to @most_inventory[0].name, @most_inventory[0], class: 'text-success mt-4' %>
+          <span class="badge badge-primary badge-pill"><%= @most_inventory[0].product_count %> Products</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to @most_inventory[1].name, @most_inventory[1], class: 'text-success mt-4' %>
+          <span class="badge badge-primary badge-pill"><%= @most_inventory[1].product_count %> Products</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to @most_inventory[2].name, @most_inventory[2], class: 'text-success mt-4' %>
+          <span class="badge badge-primary badge-pill"><%= @most_inventory[2].product_count %> Products</span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

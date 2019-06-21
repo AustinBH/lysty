@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="center log-sign ">
+    <h1 class="main-head">Sign Up: </h1>
+    <div class="log-sign-field">
+        <div class="col-md-12 col-md-offset-3">
+          <%= form_for :user, url: '/signup' do |f| %>
+            <div >
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+            <div >
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div >
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
+            <div >
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+            <div id="sign-submit">
+              <%= f.submit "Sign Up", class: "btn btn-primary" %>
+            <% end %>
+            </div>
+        </div>
+    </div>
+      <%= render 'errors' %>
+  </div>
+  <!-- 'errors' contained in div.sign-errors -->
+
+</div>
