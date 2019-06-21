@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
   def out_of_stock
     if self.stores.empty?
-      "This product is currently out of stock!"
+      "Out of stock"
     end
   end
 

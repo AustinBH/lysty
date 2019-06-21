@@ -152,3 +152,11 @@
    a {
      color: black;
    }
+
+   a:hover {
+     color: black;
+   }
+
+   .log-sign-field a {
+     color: blue;
+   }
