@@ -110,7 +110,17 @@
      margin-bottom: 0px;
    }
 
+   /* Pages */
 
+   .text-success {
+     margin-bottom: 30px;
+   }
+
+   .center div.input-group {
+     margin-left: auto;
+     margin-right: auto;
+     width: 280px ;
+    }
 
    .show {
      margin: auto;

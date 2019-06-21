@@ -2,10 +2,12 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
+    @most_inventory = @stores.max {|store| store.products.count}
   end
 
   def show
     @store = Store.find(params[:id])
+    @products = @store.products
   end
 
   def filter
