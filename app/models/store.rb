@@ -4,5 +4,7 @@ class Store < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :location, presence: true, uniqueness: true
+  validates :phone_number, presence: true
+  validates :website, presence: true
 
 end
