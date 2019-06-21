@@ -1,28 +1,44 @@
 <div class="card show">
 
   <div>
-    <h3 class="text-success"><%= @product.name %></h3>
-    <p>Price: $<%= @product.price %></p>
-    <p>Origin: <%= @product.origin %></p>
-    <p><%= @product.out_of_stock %></p>
+    <h3 class="text-success">
+      <%= @product.name %>
+    </h3>
+    <p>
+      Price: $<%= @product.price %>
+    </p>
+    <p>
+      Origin: <%= @product.origin %>
+    </p>
+    <p>
+      <%= @product.out_of_stock %>
+    </p>
   </div>
 
   <div class="mt-3">
     <%= form_for :lists, url: '/add_product' do |f| %>
-      <h5 class="text-success"><%= f.label 'Add this product to my list:' %></h5>
+    <div>
+      <h5 class="text-success mb-2">
+        <%= f.label 'Add this product to my list:' %>
+      </h5>
       <div class="input-group">
-        <%= f.collection_select :list_id, user_lists, :id, :title, class: "custom-select" %>
+        <%= f.collection_select :list_id, user_lists, :id, :title %>
         <div class="input-group-append">
           <%= f.submit 'Add', class: "btn btn-success" %>
         </div>
       </div>
+    </div>
     <% end %>
     <p class="text-weight-light text-secondary ml-3"><%= flash[:add_product] %></p>
   </div>
 
-  <div class="mt-5">
-    <h5 class="text-success">Add to a new list:</h5>
+  <div>
+    <h5 class="text-success mb-2">
+      Add to a new list:
+    </h5>
     <%= render '/lists/form', list: List.new %>
-    <p class="text-weight-light text-secondary ml-3"><%= flash[:add_list] %></p>
+    <p class="text-weight-light text-secondary ml-1">
+      <%= flash[:add_list] %>
+    </p>
   </div>
 </div>
